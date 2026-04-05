@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Design Tokens ─────────────────────────────────── */
+:root {
+  --navy:       #111827;
+  --navy2:      #1f2d3d;
+  --navy3:      #2d3f52;
+  --green:      #16a34a;
+  --green-lt:   #22c55e;
+  --green-bg:   #f0fdf4;
+  --green-bd:   #bbf7d0;
+  --green-text: #15803d;
+  --lime:       #a3e635;
+  --surface:    #ffffff;
+  --bg:         #f8f9fb;
+  --bg2:        #f1f3f7;
+  --border:     #e5e7eb;
+  --border2:    #d1d5db;
+  --text:       #111827;
+  --text2:      #374151;
+  --text3:      #6b7280;
+  --text4:      #9ca3af;
+  --danger:     #dc2626;
+  --danger-bg:  #fef2f2;
+  --amber:      #d97706;
+  --amber-bg:   #fffbeb;
+  --amber-bd:   #fde68a;
+
+  --r-xs: 6px;
+  --r-sm: 10px;
+  --r:    14px;
+  --r-lg: 20px;
+  --r-xl: 26px;
+
+  --sh-sm: 0 1px 2px rgba(0,0,0,.05), 0 1px 3px rgba(0,0,0,.06);
+  --sh:    0 2px 8px rgba(0,0,0,.07), 0 1px 3px rgba(0,0,0,.05);
+  --sh-lg: 0 8px 32px rgba(0,0,0,.10), 0 2px 8px rgba(0,0,0,.06);
+  --sh-xl: 0 16px 48px rgba(0,0,0,.14), 0 4px 16px rgba(0,0,0,.08);
+
+  --pad: 20px;
+  --max: 540px;
+}
+
+/* ─── Base Reset ─────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+button { font-family: inherit; cursor: pointer; }
+input  { font-family: inherit; }
+
+/* ─── Animations ─────────────────────────────────────── */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: .35; }
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes sheetUp {
+  from { transform: translateY(100%); }
+  to   { transform: none; }
+}
+
+@keyframes rot {
+  to { transform: rotate(360deg); }
+}
+
+/* ─── Layout Helpers ─────────────────────────────────── */
+.app-wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.padded {
+  padding-left: var(--pad);
+  padding-right: var(--pad);
+}
